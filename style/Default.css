@@ -60,7 +60,10 @@ html {
 
 html, body, section, main {
     block-size: 100%;
-}  
+}
+header, .section-wrapper {
+	padding: 0 4rem;
+}
 .section-wrapper {
 	width: 100%;
     block-size: 100%;

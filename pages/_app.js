@@ -56,13 +56,13 @@ function	AppWrapper(props) {
 					site: '@iearnfinance',
 					cardType: 'summary_large_image',
 				}} />
-			<main id={'app'} className={'relative flex flex-col md:flex-row max-w-6xl mx-auto'} style={{minHeight: '100vh'}}>
+			<div id={'app'} className={'relative flex flex-col md:flex-row max-w-6xl mx-auto'} style={{minHeight: '100vh'}}>
 				<Component
 					key={router.route}
 					element={props.element}
 					router={props.router}
 					{...pageProps} />
-			</main>
+			</div>
 		</>
 	);
 }
