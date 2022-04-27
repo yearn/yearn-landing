@@ -16,7 +16,7 @@ export const toAddress = (address) => {
 
 export function	parseMarkdown(markdownText) {
 	const htmlText = markdownText
-		.replace(/\[(.*?)\]\((.*?)\)/gim, "<a class='underline cursor-pointer text-yblue-regular' target='_blank' href='$2'>$1</a>");
+		.replace(/\[(.*?)\]\((.*?)\)/gim, "<a class='underline cursor-pointer text-bluepillblue-regular' target='_blank' href='$2'>$1</a>");
 
 	return htmlText.trim();
 }

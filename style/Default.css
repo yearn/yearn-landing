@@ -77,10 +77,21 @@ header, .section-wrapper {
     justify-content: center;
 }
 
+.about {
+	background-image: url("../images/blue-pill 1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .with-top-gradient {
 	background: linear-gradient(180deg, #F1F1F8 48.4%, rgba(241, 241, 248, 0) 100%);
 }
 
 .button-gradient {
 	background: linear-gradient(0deg, #0657F9, #0657F9), #C4C4C4;
+}
+
+h1, h2 {
+	font-family: new-spirit-condensed, serif;
+	/*color: white;*/
 }

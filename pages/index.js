@@ -17,82 +17,49 @@ function	Header({currentPage, onClick}) {
 				<div className={'flex flex-row space-x-10'}>
 					<p
 						onClick={() => onClick(currentPage <= 1 ? 1 : 0)}
-						className={`${currentPage <= 2 ? 'text-yblue-regular border-b border-yblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage <= 1 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'About'}
 					</p>
 					<p
+						onClick={() => onClick(1)}
+						className={`${currentPage === 2 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						{'How Vaults work'}
+					</p>
+					<p
 						onClick={() => onClick(2)}
-						className={`${currentPage === 3 ? 'text-yblue-regular border-b border-yblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
-						{'People'}
+						className={`${currentPage === 3 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						{'Partners'}
 					</p>
 					<p
 						onClick={() => onClick(3)}
-						className={`${currentPage === 4 ? 'text-yblue-regular border-b border-yblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
-						{'Business'}
-					</p>
-					<p
-						onClick={() => onClick(4)}
-						className={`${currentPage === 5 ? 'text-yblue-regular border-b border-yblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage === 4 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'Contributors'}
 					</p>
 					<p
-						onClick={() => onClick(5)}
-						className={`${currentPage === 6 ? 'text-yblue-regular border-b border-yblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						onClick={() => onClick(4)}
+						className={`${currentPage === 5 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'Index'}
 					</p>
 				</div>
 				<div className={'flex flex-row items-center justify-end'}>
-					<a href={'https://yearn.finance'} target={'_blank'} className={'text-yblue-regular font-bold cursor-pointer'} rel={'noreferrer'}>{'Go to app'}</a>
+					<a href={'https://yearn.finance'} target={'_blank'} className={'text-bluepillblue-regular font-bold cursor-pointer'} rel={'noreferrer'}>{'Go to Vaults'}</a>
 				</div>
 			</nav>
 		</header>
 	);
 }
 
-function	Footer({onClick, className}) {
+function	Footer({onClick, className, nextPageText}) {
 	return (
-		<div className={'max-w-6xl mx-auto mt-auto mb-6 md:mb-10'}>
-			<svg onClick={onClick} width={'40'} height={'40'} className={`animate animate-bounce cursor-pointer ${className}`} viewBox={'0 0 40 40'} fill={'none'} xmlns={'http://www.w3.org/2000/svg'}>
+		<div className={'cursor-pointer max-w-6xl mx-auto mt-auto mb-6 md:mb-10'} onClick={onClick}>
+			<p className={'text-center mb-5 underline'}>{nextPageText}</p>
+			<svg onClick={onClick} width={'40'} height={'40'} className={`animate animate-bounce ${className}`} viewBox={'0 0 40 40'} fill={'none'} xmlns={'http://www.w3.org/2000/svg'}>
 				<path fillRule={'evenodd'} clipRule={'evenodd'} d={'M29.5731 20.3093C30.0927 20.7639 30.1453 21.5536 29.6907 22.0731L20.9407 32.0731C20.7034 32.3444 20.3605 32.5 20 32.5C19.6395 32.5 19.2966 32.3444 19.0593 32.0731L10.3093 22.0731C9.85469 21.5536 9.90734 20.7639 10.4269 20.3093C10.9464 19.8547 11.7361 19.9073 12.1907 20.4269L20 29.3518L27.8093 20.4269C28.2639 19.9073 29.0536 19.8547 29.5731 20.3093Z'} fill={'#0657F9'}/>
 				<path fillRule={'evenodd'} clipRule={'evenodd'} d={'M29.5731 11.9759C30.0927 12.4305 30.1453 13.2202 29.6907 13.7398L20.9407 23.7398C20.7034 24.011 20.3605 24.1666 20 24.1666C19.6395 24.1666 19.2966 24.011 19.0593 23.7398L10.3093 13.7398C9.85469 13.2202 9.90734 12.4305 10.4269 11.9759C10.9464 11.5213 11.7361 11.574 12.1907 12.0935L20 21.0184L27.8093 12.0935C28.2639 11.574 29.0536 11.5213 29.5731 11.9759Z'} fill={'#0657F9'}/>
 			</svg>
 		</div>
 	);
 }
-
-
-function	Numbers({moveSectionDown}) {
-	return (
-		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full'}>
-			<article className={'max-w-6xl w-full h-full mx-auto flex flex-col justify-center items-center'}>
-				<div className={'mb-10'}>
-					<h2 className={'text-6xl text-yblue-regular text-center font-black'}>{'3.79861364 ETH'}</h2>
-					<p className={'text-base text-ygray-50 text-center'}>{'our users earned since you opened this page'}</p>
-				</div>
-				<div className={'flex flex-col md:flex-row justify-center w-full space-x-0 md:space-x-20 space-y-8 md:space-y-0'}>
-					<div>
-						<h3 className={'text-yblue-regular text-3xl font-black'}>{'$ 4 810 338 346'}</h3>
-						<p className={'text-base text-ygray-50 text-center'}>{'total value locked'}</p>
-					</div>
-					<div>
-						<h3 className={'text-yblue-regular text-3xl font-black'}>{'56879'}</h3>
-						<p className={'text-base text-ygray-50 text-center'}>{'users'}</p>
-					</div>
-					<div>
-						<h3 className={'text-yblue-regular text-3xl font-black'}>{'25823 ETH'}</h3>
-						<p className={'text-base text-ygray-50 text-center'}>{'saved on gas fees'}</p>
-					</div>
-					<div>
-						<h3 className={'text-yblue-regular text-3xl font-black'}>{'53%'}</h3>
-						<p className={'text-base text-ygray-50 text-center'}>{'max APY'}</p>
-					</div>
-				</div>
-			</article>
-			<Footer className={'text-yblue'} onClick={() => moveSectionDown()} />
-		</section>
-	);
-}
-
 
 function	Index({moveSectionDown}) {
 	const	[display, set_display] = React.useState(false);
@@ -103,30 +70,22 @@ function	Index({moveSectionDown}) {
 	}, [typeof(window) !== 'undefined']);
 
 	return (
-		<>
-			<div className={'h-full max-w-6xl mx-auto flex flex-col w-full'}>
-				<div className={'h-screen w-full flex flex-col justify-center items-center text-center'}>
-					<h1 className={'font-bold text-ygray-100 text-8xl'}>{'Yearn is'}</h1>
+		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full'}>
+			<div className={'h-screen w-full flex flex-col justify-center items-center text-center'}>
+				<h1 className={'font-bold text-4xl'}>{'Yearn, a weird place for our money'}</h1>
 
-					<article className={`max-w-full relative -mt-5 transition-opacity duration-700 ${display ? 'opacity-100' : 'opacity-0'}`}>
-						<div className={'absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-fadeWhite to-transparent z-10'} />
-						<div className={'absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-fadeWhite to-transparent z-10'} />
-					</article>
+				<article className={'text-center my-5'}>
+					<h2 className={'font-bold text-2xl'}>{'New financial frontiers are strange places to say the least.'}<br/>{'But at Yearn we believe in the power of weird.'}</h2>
+					<p>{'Divergent minds create the strongest protocols and smartest yield strategies. Weird people don’t shy away from tough challenges, they rush towards them. So whether you’re crypto curious, a potential partner or future contributor, come join the weirder side of defi – it may be the sanest choice you ever make.\n'}</p>
+				</article>
 
-					<article className={'text-ygray-70 text-center text-2xl my-10'}>
-						<p>{'Yearn is a protocol made by people for people.'}</p>
-						<p>{'We make Decentralized Finance simple. We let your money work for you.'}</p>
-					</article>
-
-					<article className={'flex flex-row items-center space-x-4'}>
-						<button onClick={moveSectionDown} className={'bg-yblue-regular border border-yblue-regular hover:bg-yblue-hover transition-colors text-white font-bold py-2 px-4 rounded-lg w-53 text-sm'}>{'Go to app'}</button>
-						<button onClick={moveSectionDown} className={'bg-none border border-yblue-regular text-yblue-regular hover:bg-yblue-light transition-colors font-bold py-2 px-4 rounded-lg w-53 text-sm'}>{'How it works?'}</button>
-					</article>
-				</div>
-
+				<article className={'flex flex-row items-center space-x-4'}>
+					<button onClick={moveSectionDown} className={'bg-bluepillblue-regular border border-bluepillblue-regular hover:bg-bluepillblue-hover transition-colors text-white font-bold py-2 px-4 rounded-lg w-53 text-sm'}>{'Go to app'}</button>
+					<button onClick={moveSectionDown} className={'bg-none border border-bluepillblue-regular text-bluepillblue-regular hover:bg-bluepillblue-light transition-colors font-bold py-2 px-4 rounded-lg w-53 text-sm'}>{'How it works?'}</button>
+				</article>
 			</div>
-			<Footer className={'text-yblue'} onClick={() => moveSectionDown()} />
-		</>
+			<Footer className={'text-bluepillblue'} nextPageText={'How Vaults work'} onClick={() => moveSectionDown()} />
+		</section>
 	);
 }
 
@@ -139,7 +98,7 @@ function	How({moveSectionDown}) {
 						<h2 className={'text-6xl text-ygray-100 font-black'}>{'How'}</h2>
 						<h2 className={'text-6xl text-ygray-100 font-black'}>
 							{'Yearn '}
-							<span className={'text-yblue'}>{'Vaults'}</span>
+							<span className={'text-bluepillblue'}>{'Vaults'}</span>
 							{' Work'}
 						</h2>
 					</div>
@@ -148,41 +107,40 @@ function	How({moveSectionDown}) {
 						<p className={'mt-8 text-base text-ygray-50'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
 					</div>
 					<div className={'flex flex-row space-x-4'}>
-						<button className={'text-base px-14 py-2 button-gradient rounded-lg text-white font-bold border border-yblue'}>{'Get me to vaults'}</button>
-						<button className={'text-base px-14 py-2 rounded-lg text-yblue-regular font-bold border border-yblue'}>{'Learn more'}</button>
+						<button className={'text-base px-14 py-2 button-gradient rounded-lg text-white font-bold border border-bluepillblue'}>{'Get me to vaults'}</button>
+						<button className={'text-base px-14 py-2 rounded-lg text-bluepillblue-regular font-bold border border-bluepillblue'}>{'Learn more'}</button>
 					</div>
 				</div>
 				<div className={'w-full mr-10 mt-10'}>
 					<Comp />
 				</div>
 			</div>
-			<Footer className={'text-yblue'} onClick={() => moveSectionDown()} />
+			<Footer className={'text-bluepillblue'} nextPageText={'Partners'} onClick={() => moveSectionDown()} />
 		</section>
 	);
 }
 
-function	Business({moveSectionDown}) {
+function	Partners({moveSectionDown}) {
 	return (
 		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full'}>
 			<div className={'max-w-6xl w-full h-full mx-auto flex flex-row justify-center items-center'}>
 				<div className={'mr-28'}>
 					<div>
-						<h2 className={'text-6xl text-ygray-100 font-black'}>{'Some info'}</h2>
-						<h2 className={'text-6xl text-ygray-100 font-black'}>{'for business'}</h2>
+						<h2 className={'text-6xl text-ygray-100 font-black'}>{'Partners'}</h2>
 					</div>
 					<div className={'my-8'}>
 						<p className={'text-base text-ygray-50'}>{'Vaults are a passive-investing strategy, enabling people to put their capital to work via automation. Yearn strategists and systems identify the optimal opportunities for yield in the market.'}</p>
 						<p className={'mt-8 text-base text-ygray-50'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
 					</div>
 					<div className={'flex flex-row space-x-4'}>
-						<button className={'text-base px-14 py-2 button-gradient rounded-lg text-white font-bold border border-yblue'}>{'Sign me in'}</button>
-						<button className={'text-base px-14 py-2 rounded-lg text-yblue-regular font-bold border border-yblue'}>{'Learn more'}</button>
+						<button className={'text-base px-14 py-2 button-gradient rounded-lg text-white font-bold border border-bluepillblue'}>{'Sign me in'}</button>
+						<button className={'text-base px-14 py-2 rounded-lg text-bluepillblue-regular font-bold border border-bluepillblue'}>{'Learn more'}</button>
 					</div>
 				</div>
 				<div className={'w-full mr-10 mt-10'}>
 				</div>
 			</div>
-			<Footer className={'text-yblue'} onClick={() => moveSectionDown()} />
+			<Footer className={'text-bluepillblue'} nextPageText={'Contributors'} onClick={() => moveSectionDown()} />
 		</section>
 	);
 }
@@ -193,22 +151,21 @@ function	Contributors(moveSectionDown) {
 			<div className={'max-w-6xl w-full h-full mx-auto flex flex-row justify-center items-center'}>
 				<div className={'mr-28'}>
 					<div>
-						<h2 className={'text-6xl text-ygray-100 font-black'}>{'Some info'}</h2>
-						<h2 className={'text-6xl text-ygray-100 font-black'}>{'for contributors'}</h2>
+						<h2 className={'text-6xl text-ygray-100 font-black'}>{'Contributors'}</h2>
 					</div>
 					<div className={'my-8'}>
 						<p className={'text-base text-ygray-50'}>{'Vaults are a passive-investing strategy, enabling people to put their capital to work via automation. Yearn strategists and systems identify the optimal opportunities for yield in the market.'}</p>
 						<p className={'mt-8 text-base text-ygray-50'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
 					</div>
 					<div className={'flex flex-row space-x-4'}>
-						<button className={'text-base px-14 py-2 button-gradient rounded-lg text-white font-bold border border-yblue'}>{'Sign me up'}</button>
-						<button className={'text-base px-14 py-2 rounded-lg text-yblue-regular font-bold border border-yblue'}>{'Learn more'}</button>
+						<button className={'text-base px-14 py-2 button-gradient rounded-lg text-white font-bold border border-bluepillblue'}>{'Sign me up'}</button>
+						<button className={'text-base px-14 py-2 rounded-lg text-bluepillblue-regular font-bold border border-bluepillblue'}>{'Learn more'}</button>
 					</div>
 				</div>
 				<div className={'w-full mr-10 mt-10'}>
 				</div>
 			</div>
-			<Footer className={'text-yblue'} onClick={() => moveSectionDown()} />
+			<Footer className={'text-bluepillblue'} nextPageText={'Index of sites'} onClick={() => moveSectionDown()} />
 		</section>
 	);
 }
@@ -263,23 +220,18 @@ function Wrapper() {
 
 				<section className={'section flex w-full h-screen'}>
 					<div className={'w-full h-full'}>
-						<Numbers moveSectionDown={() => scrollTo(2)} />
+						<How moveSectionDown={() => scrollTo(2)} />
 					</div>
 				</section>
 
 				<section className={'section flex w-full h-screen'}>
 					<div className={'w-full h-full'}>
-						<How moveSectionDown={() => scrollTo(3)} />
+						<Partners moveSectionDown={() => scrollTo(3)} />
 					</div>
 				</section>
 				<section className={'section flex w-full h-screen'}>
 					<div className={'w-full h-full'}>
-						<Business moveSectionDown={() => scrollTo(4)} />
-					</div>
-				</section>
-				<section className={'section flex w-full h-screen'}>
-					<div className={'w-full h-full'}>
-						<Contributors moveSectionDown={() => scrollTo(5)} />
+						<Contributors moveSectionDown={() => scrollTo(4)} />
 					</div>
 				</section>
 				<section className={'section flex w-full h-screen'}>

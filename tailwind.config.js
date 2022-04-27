@@ -13,7 +13,8 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			sans: ['Roboto', 'sans-serif'],
-			mono: ['IBM Plex Mono', 'monospace']
+			mono: ['IBM Plex Mono', 'monospace'],
+			serif: ['new-spirit-condensed']
 		},
 		colors: {
 			transparent: 'transparent',
@@ -27,6 +28,11 @@ module.exports = {
 			},
 			yblue: {
 				regular: '#0657F9',
+				hover: '#004ADF',
+				light: '#E0EAFF',
+			},
+			bluepillblue: {
+				regular: '#648ec9',
 				hover: '#004ADF',
 				light: '#E0EAFF',
 			},
