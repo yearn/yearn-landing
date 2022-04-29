@@ -38,7 +38,7 @@ function	Header({currentPage, onClick}) {
 					<p
 						onClick={() => onClick(4)}
 						className={`${currentPage === 5 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
-						{'Index'}
+						{'Links'}
 					</p>
 				</div>
 				<div className={'flex flex-row items-center justify-end'}>
@@ -72,11 +72,11 @@ function	Index({moveSectionDown}) {
 	return (
 		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full bg-image about'}>
 			<div className={'h-screen w-full flex flex-col justify-center items-center text-center'}>
-				<h1 className={'font-bold text-5xl'}>{'Yearn, a weird place for our money'}</h1>
+				<h1 className={'font-bold text-white text-5xl'}>{'Yearn, a weird place for our money.'}</h1>
 
-				<article className={'text-center my-5'}>
-					<h2 className={'font-bold text-2xl'}>{'New financial frontiers are strange places to say the least.'}<br/>{'But at Yearn we believe in the power of weird.'}</h2>
-					<p>{'Divergent minds create the strongest protocols and smartest yield strategies. Weird people don’t shy away from tough challenges, they rush towards them. So whether you’re crypto curious, a potential partner or future contributor, come join the weirder side of defi – it may be the sanest choice you ever make.\n'}</p>
+				<article className={'text-center my-5 max-w-3xl'}>
+					<h2 className={'font-bold text-white text-2xl'}>{'New financial frontiers are strange places to say the least.'}<br/>{'But at Yearn we believe in the power of weird.'}</h2>
+					<p className={'mt-8 text-white'}>{'Divergent minds create the strongest protocols and smartest yield strategies. Weird people don’t shy away from tough challenges, they rush towards them. So whether you’re crypto curious, a potential partner or future contributor, come join the weirder side of defi – it may be the sanest choice you ever make.\n'}</p>
 				</article>
 
 			</div>
@@ -159,12 +159,9 @@ function	SiteIndex() {
 		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full'}>
 			<div className={'max-w-6xl w-full h-full mx-auto flex flex-row justify-center items-center'}>
 				<div className={'mr-28'}>
-					<div>
-						<h2 className={'text-6xl text-ygray-100 font-black'}>{'Index of sites'}</h2>
-					</div>
+					<h2 className={'text-3xl text-bluepillblue-regular font-bold'}>{'Links to our sites'}</h2>
 					<div className={'my-8'}>
 						<p className={'text-base text-ygray-100'}>{'Vaults are a passive-investing strategy, enabling people to put their capital to work via automation. Yearn strategists and systems identify the optimal opportunities for yield in the market.'}</p>
-						<p className={'mt-8 text-base text-ygray-100'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
 					</div>
 				</div>
 			</div>
