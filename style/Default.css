@@ -3,7 +3,8 @@
 }
 
 html {
-	background: #F1F1F8;
+	/*background: #F1F1F8;*/
+	background: #E9E9E9;
     scroll-snap-type: y mandatory;
 	margin-left: calc(100vw - 100%);
 }
@@ -86,10 +87,14 @@ header, .section-wrapper {
 	background-image: url("../images/blue-pill.png");
 }
 .partners {
-	background-image: url("../images/flowers.png");
+	background-image: url("../images/deposit.png");
+	background-size: 30rem;
+	background-position: bottom right;
 }
 .contributors {
-	background-image: url("../images/eye.png");
+	background-image: url("../images/flowers.png");
+	background-size: 50rem;
+	background-position: bottom right;
 }
 
 .with-top-gradient {
