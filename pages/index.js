@@ -14,35 +14,35 @@ function	Header({currentPage, onClick}) {
 						<path d={'M25.2033 30.3562C24.1794 31.9122 22.2076 33.3802 18.8119 33.1322C17.1001 33.0162 12.9805 30.8122 13.7564 25.9442C13.8924 25.0322 14.4003 23.8282 14.4003 23.8282L12.0926 24.2762L11.6406 22.4562L17.2761 21.1202L18.3719 26.9602L16.6961 27.2922L16.1122 24.5202C16.1122 24.5202 14.5363 26.9562 16.4801 29.5802C17.632 30.9322 18.192 31.0002 19.5238 31.2442C20.6877 31.4442 23.4234 31.1162 24.3194 27.9602C24.7153 25.9242 24.3673 24.3962 21.7836 22.3402L21.9916 20.1362C21.9916 20.1362 24.8833 22.2882 25.6032 23.7642C26.1552 24.9362 27.1031 27.2402 25.2033 30.3562Z'} fill={'white'}/>
 					</svg>
 				</div>
-				<div className={'flex flex-row space-x-10'}>
+				<div className={'flex flex-row space-x-10 font-bold'}>
 					<p
 						onClick={() => onClick(currentPage <= 1 ? 1 : 0)}
-						className={`${currentPage <= 1 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage <= 1 ? 'text-bluepillblue-regular' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'About'}
 					</p>
 					<p
 						onClick={() => onClick(1)}
-						className={`${currentPage === 2 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage === 2 ? 'text-bluepillblue-regular' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'How Vaults work'}
 					</p>
 					<p
 						onClick={() => onClick(2)}
-						className={`${currentPage === 3 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage === 3 ? 'text-bluepillblue-regular' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'Partners'}
 					</p>
 					<p
 						onClick={() => onClick(3)}
-						className={`${currentPage === 4 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage === 4 ? 'text-bluepillblue-regular' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'Contributors'}
 					</p>
 					<p
 						onClick={() => onClick(4)}
-						className={`${currentPage === 5 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage === 5 ? 'text-bluepillblue-regular' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'Links'}
 					</p>
 				</div>
 				<div className={'flex flex-row items-center justify-end'}>
-					<a href={'https://yearn.finance'} target={'_blank'} className={'text-bluepillblue-regular font-bold cursor-pointer'} rel={'noreferrer'}>{'Go to Vaults'}</a>
+					<a href={'https://yearn.finance'} target={'_blank'} className={'text-bluepillblue-regular font-bold cursor-pointer border-b border-bluepillblue'} rel={'noreferrer'}>{'Go to Vaults'}</a>
 				</div>
 			</nav>
 		</header>
@@ -52,7 +52,7 @@ function	Header({currentPage, onClick}) {
 function	Footer({onClick, textClassName, className, nextPageText}) {
 	return (
 		<div className={'cursor-pointer max-w-6xl mx-auto mt-auto mb-6 md:mb-10'} onClick={onClick}>
-			<p className={`text-center mb-5 underline ${textClassName}`}>{nextPageText}</p>
+			<p className={`text-center mb-5 border-b ${textClassName}`}>{nextPageText}</p>
 			<svg onClick={onClick} width={'40'} height={'40'} className={`animate animate-bounce ${className}`} viewBox={'0 0 40 40'} fill={'none'} xmlns={'http://www.w3.org/2000/svg'}>
 				<path fillRule={'evenodd'} clipRule={'evenodd'} d={'M29.5731 20.3093C30.0927 20.7639 30.1453 21.5536 29.6907 22.0731L20.9407 32.0731C20.7034 32.3444 20.3605 32.5 20 32.5C19.6395 32.5 19.2966 32.3444 19.0593 32.0731L10.3093 22.0731C9.85469 21.5536 9.90734 20.7639 10.4269 20.3093C10.9464 19.8547 11.7361 19.9073 12.1907 20.4269L20 29.3518L27.8093 20.4269C28.2639 19.9073 29.0536 19.8547 29.5731 20.3093Z'} fill={'#0657F9'}/>
 				<path fillRule={'evenodd'} clipRule={'evenodd'} d={'M29.5731 11.9759C30.0927 12.4305 30.1453 13.2202 29.6907 13.7398L20.9407 23.7398C20.7034 24.011 20.3605 24.1666 20 24.1666C19.6395 24.1666 19.2966 24.011 19.0593 23.7398L10.3093 13.7398C9.85469 13.2202 9.90734 12.4305 10.4269 11.9759C10.9464 11.5213 11.7361 11.574 12.1907 12.0935L20 21.0184L27.8093 12.0935C28.2639 11.574 29.0536 11.5213 29.5731 11.9759Z'} fill={'#0657F9'}/>
@@ -96,7 +96,7 @@ function	How({moveSectionDown}) {
 						<p className={'mt-8 text-base text-ygray-100'}>{'We have around 50 vaults, each containing multiple strategies. A strategy is an automated smart contract. It puts your tokens into different protocols to generate yield.'}</p>
 						<p className={'mt-8 text-base text-ygray-100'}>{'People benefit from socializing gas costs and need not be experts in defi or the underlying protocols to utilize Yearn Vaults.'}</p>
 						<p className={'mt-8 text-base text-ygray-100'}>{'Yearn Vaults run on Ethereum and Fantom networks.'}</p>
-						<p className={'mt-8 text-base font-bold underline text-bluepillblue-regular'}><a href={'https://yearn.finance'} target={'_blank'} className={'text-bluepillblue-regular font-bold cursor-pointer'} rel={'noreferrer'}>{'Go to Vaults'}</a></p>
+						<p className={'mt-8 text-base font-bold text-bluepillblue-regular'}><a href={'https://yearn.finance'} target={'_blank'} className={'text-bluepillblue-regular font-bold cursor-pointer border-b border-bluepillblue'} rel={'noreferrer'}>{'Go to Vaults'}</a></p>
 					</div>
 				</div>
 				<div className={'w-full mr-10 mt-10'}>
@@ -141,14 +141,14 @@ function	Contributors({moveSectionDown}) {
 					<div className={'my-8'}>
 						<p className={'text-base text-white'}>{'Joining the Yearn community of contributors means you will be working directly alongside an A-team of Blockchain experts as you help build the future of finance and cultivate the growth of the Yearn ecosystem. As an idea meritocracy, Yearn is a collaborative environment designed to bring the best ideas to fruition. 2021 saw major growth for the Yearn ecosystem, so we are actively expanding the community of contributors to meet our mission of making finance decentralized accessible to all. '}</p>
 						<p className={'mt-8 text-base text-white'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
-						<p className={'mt-8 text-base'}><a href={'https://yearnfinance.notion.site/Contributors-bceb03566612483ca139f800fb5452ad#8b72a89c17c942348d78806a904382a3'} target={'_blank'} className={'text-white font-bold cursor-pointer underline'} rel={'noreferrer'}>{'View open issues'}</a></p>
-						<p className={'mt-2 text-base'}><a href={'https://yearnfinance.typeform.com/to/uP7xOJUN'} target={'_blank'} className={'text-white font-bold cursor-pointer underline'} rel={'noreferrer'}>{'View open issues'}</a></p>
+						<p className={'mt-8 text-base'}><a href={'https://yearnfinance.notion.site/yearnfinance/Welcome-to-Yearn-Finance-26d6c4210e3e405c9f02f84ba567a249'} target={'_blank'} className={'text-white font-bold cursor-pointer underline'} rel={'noreferrer'}>{'Join us'}</a></p>
+						<p className={'mt-2 text-base'}><a href={'https://contribute.yearn.rocks'} target={'_blank'} className={'text-white font-bold cursor-pointer underline'} rel={'noreferrer'}>{'View open issues'}</a></p>
 					</div>
 				</div>
 				<div className={'w-full mr-10 mt-10'}>
 				</div>
 			</div>
-			<Footer textClassName={'text-white'} className={'text-white'} nextPageText={'Index of sites'} onClick={() => moveSectionDown()} />
+			<Footer textClassName={'text-white'} className={'text-white'} nextPageText={'Links'} onClick={() => moveSectionDown()} />
 		</section>
 	);
 }
