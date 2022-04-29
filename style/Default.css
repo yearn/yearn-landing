@@ -81,10 +81,10 @@ header, .section-wrapper {
 .bg-image {
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
 }
 .about {
 	background-image: url("../images/blue-pill.png");
+	background-size: cover;
 }
 .partners {
 	background-image: url("../images/deposit.png");
