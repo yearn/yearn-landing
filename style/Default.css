@@ -77,10 +77,18 @@ header, .section-wrapper {
     justify-content: center;
 }
 
-.about {
-	background-image: url("../images/blue-pill 1.png");
+.bg-image {
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+.about {
+	background-image: url("../images/blue-pill.png");
+}
+.partners {
+	background-image: url("../images/flowers.png");
+}
+.contributors {
+	background-image: url("../images/eye.png");
 }
 
 .with-top-gradient {

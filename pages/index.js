@@ -4,7 +4,7 @@ import	Comp				from	'components/icons/comp';
 
 function	Header({currentPage, onClick}) {
 	return (
-		<header className={'fixed top-0 inset-x-0 h-40 w-full with-top-gradient z-20'}>
+		<header className={'fixed top-0 inset-x-0 h-40 w-full z-20'}>
 			<nav className={'max-w-6xl w-full mx-auto py-6 md:py-10 items-center justify-between flex flex-row'}>
 				<div className={'flex flex-row items-center justify-center cursor-pointer'} onClick={() => onClick(0)}>
 					<svg width={'40'} height={'40'} viewBox={'0 0 40 40'} fill={'none'} xmlns={'http://www.w3.org/2000/svg'}>
@@ -17,27 +17,27 @@ function	Header({currentPage, onClick}) {
 				<div className={'flex flex-row space-x-10'}>
 					<p
 						onClick={() => onClick(currentPage <= 1 ? 1 : 0)}
-						className={`${currentPage <= 1 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage <= 1 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'About'}
 					</p>
 					<p
 						onClick={() => onClick(1)}
-						className={`${currentPage === 2 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage === 2 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'How Vaults work'}
 					</p>
 					<p
 						onClick={() => onClick(2)}
-						className={`${currentPage === 3 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage === 3 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'Partners'}
 					</p>
 					<p
 						onClick={() => onClick(3)}
-						className={`${currentPage === 4 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage === 4 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'Contributors'}
 					</p>
 					<p
 						onClick={() => onClick(4)}
-						className={`${currentPage === 5 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-50 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
+						className={`${currentPage === 5 ? 'text-bluepillblue-regular border-b border-bluepillblue' : 'text-ygray-100 hover:text-ygray-100 transition-colors'} cursor-pointer transition-colors`}>
 						{'Index'}
 					</p>
 				</div>
@@ -70,19 +70,15 @@ function	Index({moveSectionDown}) {
 	}, [typeof(window) !== 'undefined']);
 
 	return (
-		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full'}>
+		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full bg-image about'}>
 			<div className={'h-screen w-full flex flex-col justify-center items-center text-center'}>
-				<h1 className={'font-bold text-4xl'}>{'Yearn, a weird place for our money'}</h1>
+				<h1 className={'font-bold text-5xl'}>{'Yearn, a weird place for our money'}</h1>
 
 				<article className={'text-center my-5'}>
 					<h2 className={'font-bold text-2xl'}>{'New financial frontiers are strange places to say the least.'}<br/>{'But at Yearn we believe in the power of weird.'}</h2>
 					<p>{'Divergent minds create the strongest protocols and smartest yield strategies. Weird people don’t shy away from tough challenges, they rush towards them. So whether you’re crypto curious, a potential partner or future contributor, come join the weirder side of defi – it may be the sanest choice you ever make.\n'}</p>
 				</article>
 
-				<article className={'flex flex-row items-center space-x-4'}>
-					<button onClick={moveSectionDown} className={'bg-bluepillblue-regular border border-bluepillblue-regular hover:bg-bluepillblue-hover transition-colors text-white font-bold py-2 px-4 rounded-lg w-53 text-sm'}>{'Go to app'}</button>
-					<button onClick={moveSectionDown} className={'bg-none border border-bluepillblue-regular text-bluepillblue-regular hover:bg-bluepillblue-light transition-colors font-bold py-2 px-4 rounded-lg w-53 text-sm'}>{'How it works?'}</button>
-				</article>
 			</div>
 			<Footer className={'text-bluepillblue'} nextPageText={'How Vaults work'} onClick={() => moveSectionDown()} />
 		</section>
@@ -94,21 +90,13 @@ function	How({moveSectionDown}) {
 		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full'}>
 			<div className={'max-w-6xl w-full h-full mx-auto flex flex-row justify-center items-center'}>
 				<div className={'mr-28'}>
-					<div>
-						<h2 className={'text-6xl text-ygray-100 font-black'}>{'How'}</h2>
-						<h2 className={'text-6xl text-ygray-100 font-black'}>
-							{'Yearn '}
-							<span className={'text-bluepillblue'}>{'Vaults'}</span>
-							{' Work'}
-						</h2>
-					</div>
+					<h2 className={'text-3xl text-bluepillblue-regular font-bold'}>{'Vaults are a passive investing strategy, enabling people to put their capital to work via automation '}</h2>
 					<div className={'my-8'}>
-						<p className={'text-base text-ygray-50'}>{'Vaults are a passive-investing strategy, enabling people to put their capital to work via automation. Yearn strategists and systems identify the optimal opportunities for yield in the market.'}</p>
-						<p className={'mt-8 text-base text-ygray-50'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
-					</div>
-					<div className={'flex flex-row space-x-4'}>
-						<button className={'text-base px-14 py-2 button-gradient rounded-lg text-white font-bold border border-bluepillblue'}>{'Get me to vaults'}</button>
-						<button className={'text-base px-14 py-2 rounded-lg text-bluepillblue-regular font-bold border border-bluepillblue'}>{'Learn more'}</button>
+						<p className={'text-base text-ygray-100'}>{'Yearn strategists and systems identify the optimal opportunities for yield in the market. Each Vault auto-compounds earned tokens, meaning Yearn reinvests earned tokens to generate additional earnings over time.'}</p>
+						<p className={'mt-8 text-base text-ygray-100'}>{'We have around 50 vaults, each containing multiple strategies. A strategy is an automated smart contract. It puts your tokens into different protocols to generate yield.'}</p>
+						<p className={'mt-8 text-base text-ygray-100'}>{'People benefit from socializing gas costs and need not be experts in defi or the underlying protocols to utilize Yearn Vaults.'}</p>
+						<p className={'mt-8 text-base text-ygray-100'}>{'Yearn Vaults run on Ethereum and Fantom networks.'}</p>
+						<p className={'mt-8 text-base font-bold underline text-bluepillblue-regular'}><a href={'https://yearn.finance'} target={'_blank'} className={'text-bluepillblue-regular font-bold cursor-pointer'} rel={'noreferrer'}>{'Go to Vaults'}</a></p>
 					</div>
 				</div>
 				<div className={'w-full mr-10 mt-10'}>
@@ -122,19 +110,16 @@ function	How({moveSectionDown}) {
 
 function	Partners({moveSectionDown}) {
 	return (
-		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full'}>
+		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full bg-image partners'}>
 			<div className={'max-w-6xl w-full h-full mx-auto flex flex-row justify-center items-center'}>
 				<div className={'mr-28'}>
-					<div>
-						<h2 className={'text-6xl text-ygray-100 font-black'}>{'Partners'}</h2>
-					</div>
+					<h2 className={'text-3xl text-bluepillblue-regular font-bold'}>{'Partners'}</h2>
 					<div className={'my-8'}>
-						<p className={'text-base text-ygray-50'}>{'Vaults are a passive-investing strategy, enabling people to put their capital to work via automation. Yearn strategists and systems identify the optimal opportunities for yield in the market.'}</p>
-						<p className={'mt-8 text-base text-ygray-50'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
-					</div>
-					<div className={'flex flex-row space-x-4'}>
-						<button className={'text-base px-14 py-2 button-gradient rounded-lg text-white font-bold border border-bluepillblue'}>{'Sign me in'}</button>
-						<button className={'text-base px-14 py-2 rounded-lg text-bluepillblue-regular font-bold border border-bluepillblue'}>{'Learn more'}</button>
+						<p className={'text-base text-ygray-100'}>{'If your team would like to integrate DeFi for your users to let them earn yields on their accounts you can do this now with our partnership program.'}</p>
+						<p className={'mt-8 text-base text-ygray-100'}>{'Yearn Partners aims to make Yearn vaults accessible from virtually anywhere. Any protocol that integrates Yearn vaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested, audited, and we’ll commence a gradual release with selected Partners over the coming months. '}</p>
+						<p className={'mt-8 text-base text-ygray-100'}>{'If you are interested in partnering with us, '}<a>{'we’d love to hear from you'}</a></p>
+						<p className={'mt-8 text-base text-ygray-100'}><a>{'Find out more'}</a></p>
+						<p className={'mt-8 text-base text-ygray-100'}><a>{'Fill out the enquiry form'}</a></p>
 					</div>
 				</div>
 				<div className={'w-full mr-10 mt-10'}>
@@ -145,17 +130,17 @@ function	Partners({moveSectionDown}) {
 	);
 }
 
-function	Contributors(moveSectionDown) {
+function	Contributors({moveSectionDown}) {
 	return (
-		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full'}>
+		<section className={'h-full max-w-6xl mx-auto flex flex-col w-full bg-image contributors'}>
 			<div className={'max-w-6xl w-full h-full mx-auto flex flex-row justify-center items-center'}>
 				<div className={'mr-28'}>
 					<div>
 						<h2 className={'text-6xl text-ygray-100 font-black'}>{'Contributors'}</h2>
 					</div>
 					<div className={'my-8'}>
-						<p className={'text-base text-ygray-50'}>{'Vaults are a passive-investing strategy, enabling people to put their capital to work via automation. Yearn strategists and systems identify the optimal opportunities for yield in the market.'}</p>
-						<p className={'mt-8 text-base text-ygray-50'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
+						<p className={'text-base text-ygray-100'}>{'Vaults are a passive-investing strategy, enabling people to put their capital to work via automation. Yearn strategists and systems identify the optimal opportunities for yield in the market.'}</p>
+						<p className={'mt-8 text-base text-ygray-100'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
 					</div>
 					<div className={'flex flex-row space-x-4'}>
 						<button className={'text-base px-14 py-2 button-gradient rounded-lg text-white font-bold border border-bluepillblue'}>{'Sign me up'}</button>
@@ -180,8 +165,8 @@ function	SiteIndex() {
 						<h2 className={'text-6xl text-ygray-100 font-black'}>{'Index of sites'}</h2>
 					</div>
 					<div className={'my-8'}>
-						<p className={'text-base text-ygray-50'}>{'Vaults are a passive-investing strategy, enabling people to put their capital to work via automation. Yearn strategists and systems identify the optimal opportunities for yield in the market.'}</p>
-						<p className={'mt-8 text-base text-ygray-50'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
+						<p className={'text-base text-ygray-100'}>{'Vaults are a passive-investing strategy, enabling people to put their capital to work via automation. Yearn strategists and systems identify the optimal opportunities for yield in the market.'}</p>
+						<p className={'mt-8 text-base text-ygray-100'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
 					</div>
 				</div>
 			</div>
