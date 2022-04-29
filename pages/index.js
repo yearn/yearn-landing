@@ -49,10 +49,10 @@ function	Header({currentPage, onClick}) {
 	);
 }
 
-function	Footer({onClick, className, nextPageText}) {
+function	Footer({onClick, textClassName, className, nextPageText}) {
 	return (
 		<div className={'cursor-pointer max-w-6xl mx-auto mt-auto mb-6 md:mb-10'} onClick={onClick}>
-			<p className={'text-center mb-5 underline'}>{nextPageText}</p>
+			<p className={`text-center mb-5 underline ${textClassName}`}>{nextPageText}</p>
 			<svg onClick={onClick} width={'40'} height={'40'} className={`animate animate-bounce ${className}`} viewBox={'0 0 40 40'} fill={'none'} xmlns={'http://www.w3.org/2000/svg'}>
 				<path fillRule={'evenodd'} clipRule={'evenodd'} d={'M29.5731 20.3093C30.0927 20.7639 30.1453 21.5536 29.6907 22.0731L20.9407 32.0731C20.7034 32.3444 20.3605 32.5 20 32.5C19.6395 32.5 19.2966 32.3444 19.0593 32.0731L10.3093 22.0731C9.85469 21.5536 9.90734 20.7639 10.4269 20.3093C10.9464 19.8547 11.7361 19.9073 12.1907 20.4269L20 29.3518L27.8093 20.4269C28.2639 19.9073 29.0536 19.8547 29.5731 20.3093Z'} fill={'#0657F9'}/>
 				<path fillRule={'evenodd'} clipRule={'evenodd'} d={'M29.5731 11.9759C30.0927 12.4305 30.1453 13.2202 29.6907 13.7398L20.9407 23.7398C20.7034 24.011 20.3605 24.1666 20 24.1666C19.6395 24.1666 19.2966 24.011 19.0593 23.7398L10.3093 13.7398C9.85469 13.2202 9.90734 12.4305 10.4269 11.9759C10.9464 11.5213 11.7361 11.574 12.1907 12.0935L20 21.0184L27.8093 12.0935C28.2639 11.574 29.0536 11.5213 29.5731 11.9759Z'} fill={'#0657F9'}/>
@@ -118,8 +118,8 @@ function	Partners({moveSectionDown}) {
 						<p className={'text-base text-ygray-100'}>{'If your team would like to integrate DeFi for your users to let them earn yields on their accounts you can do this now with our partnership program.'}</p>
 						<p className={'mt-8 text-base text-ygray-100'}>{'Yearn Partners aims to make Yearn vaults accessible from virtually anywhere. Any protocol that integrates Yearn vaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested, audited, and we’ll commence a gradual release with selected Partners over the coming months. '}</p>
 						<p className={'mt-8 text-base text-ygray-100'}>{'If you are interested in partnering with us, '}<a>{'we’d love to hear from you'}</a></p>
-						<p className={'mt-8 text-base text-ygray-100'}><a>{'Find out more'}</a></p>
-						<p className={'mt-8 text-base text-ygray-100'}><a>{'Fill out the enquiry form'}</a></p>
+						<p className={'mt-8 text-base text-bluepillblue-regular underline'}><a href={'https://docs.yearn.finance/partners/introduction'} target={'_blank'} className={'text-bluepillblue-regular font-bold cursor-pointer'} rel={'noreferrer'}>{'Find out more'}</a></p>
+						<p className={'mt-2 text-base text-bluepillblue-regular underline'}><a href={'https://yearnfinance.typeform.com/to/uP7xOJUN'} target={'_blank'} className={'text-bluepillblue-regular font-bold cursor-pointer'} rel={'noreferrer'}>{'Fill out the enquiry form'}</a></p>
 					</div>
 				</div>
 				<div className={'w-full mr-10 mt-10'}>
@@ -136,21 +136,19 @@ function	Contributors({moveSectionDown}) {
 			<div className={'max-w-6xl w-full h-full mx-auto flex flex-row justify-center items-center'}>
 				<div className={'mr-28'}>
 					<div>
-						<h2 className={'text-6xl text-ygray-100 font-black'}>{'Contributors'}</h2>
+						<h2 className={'text-4xl text-white font-black'}>{'Contributors'}</h2>
 					</div>
 					<div className={'my-8'}>
-						<p className={'text-base text-ygray-100'}>{'Vaults are a passive-investing strategy, enabling people to put their capital to work via automation. Yearn strategists and systems identify the optimal opportunities for yield in the market.'}</p>
-						<p className={'mt-8 text-base text-ygray-100'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
-					</div>
-					<div className={'flex flex-row space-x-4'}>
-						<button className={'text-base px-14 py-2 button-gradient rounded-lg text-white font-bold border border-bluepillblue'}>{'Sign me up'}</button>
-						<button className={'text-base px-14 py-2 rounded-lg text-bluepillblue-regular font-bold border border-bluepillblue'}>{'Learn more'}</button>
+						<p className={'text-base text-white'}>{'Joining the Yearn community of contributors means you will be working directly alongside an A-team of Blockchain experts as you help build the future of finance and cultivate the growth of the Yearn ecosystem. As an idea meritocracy, Yearn is a collaborative environment designed to bring the best ideas to fruition. 2021 saw major growth for the Yearn ecosystem, so we are actively expanding the community of contributors to meet our mission of making finance decentralized accessible to all. '}</p>
+						<p className={'mt-8 text-base text-white'}>{'Users benefit from socializing gas costs and automation which shifts capital, auto-compounds, and rebalances to maximize yield. End users need not be experts in DeFi or the underlying protocols to utilize Yearn Vaults.'}</p>
+						<p className={'mt-8 text-base'}><a href={'https://yearnfinance.notion.site/Contributors-bceb03566612483ca139f800fb5452ad#8b72a89c17c942348d78806a904382a3'} target={'_blank'} className={'text-white font-bold cursor-pointer underline'} rel={'noreferrer'}>{'View open issues'}</a></p>
+						<p className={'mt-2 text-base'}><a href={'https://yearnfinance.typeform.com/to/uP7xOJUN'} target={'_blank'} className={'text-white font-bold cursor-pointer underline'} rel={'noreferrer'}>{'View open issues'}</a></p>
 					</div>
 				</div>
 				<div className={'w-full mr-10 mt-10'}>
 				</div>
 			</div>
-			<Footer className={'text-bluepillblue'} nextPageText={'Index of sites'} onClick={() => moveSectionDown()} />
+			<Footer textClassName={'text-white'} className={'text-white'} nextPageText={'Index of sites'} onClick={() => moveSectionDown()} />
 		</section>
 	);
 }
